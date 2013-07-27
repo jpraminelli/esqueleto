@@ -4,3 +4,7 @@ RewriteCond %{REQUEST_FILENAME} -l [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^.*$ - [NC,L]
 RewriteRule ^.*$ index.php [NC,L]
+#configuração ambiente
+SetEnv APPLICATION_ENV "development"
+SetEnv PROJECT_ROOT "/var/www/Zend2SkeletonApplication"
+
