@@ -13,3 +13,6 @@ Push an existing repository from the command line
 
 git remote add origin https://github.com/jpraminelli/esqueleto.git
 git push -u origin master
+
+usuario jpraminelli
+senha jpraminelli27
