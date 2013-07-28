@@ -1,4 +1,11 @@
 <?php
+function pe($texto){
+    echo '<hr>';
+    echo '<pre>';
+    print_r($texto);
+    echo '</pre>';
+    die('<hr>');
+}
 /**
  * This makes our life easier when dealing with paths. Everything is relative
  * to the application root now.

@@ -1,32 +1,37 @@
-<div class="actions clearfix">
-    <div class="btns">
-        <a class="btn submit" href="/admin/index/save" title="Criar Post">Criar Post</a>
+<div class="actions clearfix row">
+    <div class="btns span12">
+        <a class="btn submit btn-info" href="/admin/index/save" title="Criar Post">Criar Post</a>
     </div>
 </div>
-<label class="divisor"><span>Lista de Posts</span></label>
-<table class="datatable">
+<br>
+<h2>Lista de Posts</h2>
+<table class="table-hover table">
     <thead>
         <tr>
             <th>Título</th>
             <th>Texto</th>
-            <th width="130" class="center">Data de Cadastro</th>
+            <th width="150" class="center">Data de Cadastro</th>
             <th width="120" class="center">Opções</th>
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($posts as $post): ?>
+<?php foreach ($posts as $post): ?>
             <tr>
                 <td><?php echo $this->escapeHtml($post['title']); ?></td>
                 <td><?php echo $this->escapeHtml($post['description']); ?></td>
                 <td class="center">
-                    <?php
-                    echo $this->dateFormat($post['post_date'], \IntlDateFormatter::SHORT, \IntlDateFormatter::SHORT, 'pt_BR');
-                    ?>
+    <?php
+    //echo $this->dateFormat($post['post_date'], IntlDateFormatter::SHORT, IntlDateFormatter::SHORT, 'pt_BR');
+    echo $post['post_date'];
+    ?>
                 </td>
                 <td class="center">
                     <a href="/admin/index/save/id/<?php echo $post['id']; ?>" title="Editar" class="btn"><i class="icon-edit"></i></a>
                     <a href="/admin/index/delete/id/<?php echo $post['id']; ?>" rel="confirmation" title="Deseja excluir este registro?" class="btn"><i class="icon-remove"></i></a>
                 </td>
             </tr>
-        <?php endforeach; ?>
+<?php endforeach; ?>
 </table>
+<?php
+    echo $this->paginationControl($posts, 'Sliding', 'partials/paginator/control.phtml');
+?>
