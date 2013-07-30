@@ -1,6 +1,6 @@
 <?php
 
-namespace Application\Controller;
+namespace Application\Controller; 
 
 use Zend\View\Model\ViewModel;
 use Core\Controller\ActionController;
