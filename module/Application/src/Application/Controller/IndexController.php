@@ -12,7 +12,7 @@ use Zend\Paginator\Adapter\DbSelect as PaginatorDbSelectAdapter;
  *
  * @category Application
  * @package Controller
- * @author Elton Minetto <eminetto@coderockr.com>
+ * @author joao paulo raminelli
  */
 class IndexController extends ActionController {
 
