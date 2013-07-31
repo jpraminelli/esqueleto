@@ -43,6 +43,20 @@
         </div>
         <div class="container">
             <?php echo $this->content; ?>
+            <ul class="nav">
+                <li class="active">
+                    <a href="<?=$this->basePath();?>"><?php echo $this->translate('Home') ?></a>
+                </li>
+                <li>
+                <?php $user = $this->session()->offsetGet('user'); ?>
+                <?php if ($user): ?>
+                        <a href="<?=$this->basePath();?>/admin/auth/logout"><?php echo $this->translate('Sair') ?></a>
+                <?php else: ?>
+                        <a href="<?=$this->basePath();?>/admin/auth/index"><?php echo $this->translate('Entrar') ?></a>
+                <?php endif;?>
+                </li>
+            </ul>
+
             <hr>
             <footer>
                 <p>&copy; 2005 - 2012 by Zend Technologies Ltd. <?php echo $this->translate('All rights reserved.') ?></p>

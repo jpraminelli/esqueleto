@@ -3,7 +3,6 @@ return array(
     'modules' => array(
         'Application',
         'Core',
-        //'Skel'
         'Admin',
     ),
     'module_listener_options' => array(
