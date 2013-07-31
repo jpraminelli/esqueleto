@@ -6,5 +6,5 @@ RewriteRule ^.*$ - [NC,L]
 RewriteRule ^.*$ index.php [NC,L]
 #configuração ambiente
 SetEnv APPLICATION_ENV "development"
-SetEnv PROJECT_ROOT "/var/www/zf2-livro"
+SetEnv PROJECT_ROOT "/var/www/Zend2SkeletonApplication"
 
