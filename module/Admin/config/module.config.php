@@ -54,6 +54,17 @@ return array(
             'admin' => __DIR__ . '/../view',
         ),
     ),
+    'service_manager' => array(
+      'factories'  => array(
+          'Session' => function($sm){
+                return new Zend\Session\Container('ZF2');
+          },
+          'Admin\Service\Auth' => function($sm){
+              $dbAdapter = $sm->get('DbAdapter');
+              return new Admin\Service\Auth($dbAdapter);
+          }
+      ),
+    ),
     /*
     'db' => array( //module can have a specific db configuration
         'driver' => 'PDO_SQLite',
