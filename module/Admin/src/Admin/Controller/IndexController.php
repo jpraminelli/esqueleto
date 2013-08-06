@@ -4,12 +4,12 @@ namespace Admin\Controller;
 use Zend\View\Model\ViewModel;
 use Core\Controller\ActionController;
 use Application\Model\Post;
-use Application\Form\Post as PostForm;
+use Admin\Form\Posts;
 
 class IndexController extends ActionController{
     
     public function saveAction(){
-        $form = new PostForm();
+        $form = new Posts();
         $request = $this->getRequest();
         
         if($request->isPost()){
@@ -34,7 +34,7 @@ class IndexController extends ActionController{
                 //salva
                 $saved = $this->getTable('Application\Model\Post')->save($post);
                 
-                return $this->redirect()->toUrl('/');
+                return $this->redirect()->toRoute('home');
             }
         }
         
@@ -50,10 +50,11 @@ class IndexController extends ActionController{
             //muda o texto do botao suvmit
             $form->get('submit')->setAttribute('value', 'Editar');
             
-            return new ViewModel(array(
-                    'form' => $form
-            ));
+            
         }
+        return new ViewModel(array(
+            'form' => $form
+         ));
     }
     
     public function deleteAction(){
@@ -65,7 +66,7 @@ class IndexController extends ActionController{
         }
         
         $this->getTable('Application\Model\Post')->delete($id);
-        return $this->redirect()->toUrl('/');
+        return $this->redirect()->toRoute('home');
     }
 }
 ?>

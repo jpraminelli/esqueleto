@@ -1,13 +1,13 @@
 <?php
-namespace Application\Form;
+namespace Admin\Form;
 use Zend\Form\Form;
 
-class Post extends Form
+class Posts extends Form
 {
     public function __construct() {
         parent::__construct('post');
         $this->setAttribute('method', 'post');
-        $this->setAttribute('action' , '/admin/index/save');
+        $this->setAttribute('action' , 'save');
         
         $this->add(array(
             'name' => 'id',

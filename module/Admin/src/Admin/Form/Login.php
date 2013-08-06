@@ -9,7 +9,7 @@ class Login extends Form {
     public function __construct() {
         parent::__construct('login');
         $this->setAttribute('method', 'post');
-        $this->setAttribute('action', '/admin/auth/login');
+        $this->setAttribute('action', 'login');
         $this->add(array(
             'name' => 'username',
             'attributes' => array(

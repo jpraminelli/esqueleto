@@ -10,7 +10,6 @@ use Zend\ServiceManager\ServiceLocatorInterface;
  *
  * @category Application
  * @package View\Helper
- * @author Elton Minetto <eminetto@coderockr.com>
  */
 class Session extends AbstractHelper implements ServiceLocatorAwareInterface {
 

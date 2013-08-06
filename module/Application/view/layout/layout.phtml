@@ -32,9 +32,9 @@
                     <a class="brand" href="/"><?php echo $this->translate('Skeleton Application') ?></a>
                     <div class="nav-collapse">
                         <ul class="nav">
-                            <li class="active"><a href="/"><?php echo $this->translate('Home') ?></a></li>
+                            <li class="active"><a href="<?=$this->basePath();?>"><?php echo $this->translate('Home') ?></a></li>
                             <li>
-                                <a href="/admin/auth/index">Entrar</a>
+                                <a href="<?=$this->basePath();?>/admin/auth/index">Entrar</a>
                             </li>
                         </ul>
                     </div><!--/.nav-collapse -->
@@ -43,19 +43,19 @@
         </div>
         <div class="container">
             <?php echo $this->content; ?>
-            <ul class="nav">
-                <li class="active">
-                    <a href="<?=$this->basePath();?>"><?php echo $this->translate('Home') ?></a>
-                </li>
-                <li>
+            <div class="row">
+                <div class="span1">
+                    <a  href="<?=$this->basePath();?>"><?php echo $this->translate('Home') ?></a>
+                </div>
+                <div class="span1">
                 <?php $user = $this->session()->offsetGet('user'); ?>
                 <?php if ($user): ?>
-                        <a href="<?=$this->basePath();?>/admin/auth/logout"><?php echo $this->translate('Sair') ?></a>
+                        <a  href="<?=$this->basePath();?>/admin/auth/logout"><?php echo $this->translate('Sair') ?></a>
                 <?php else: ?>
-                        <a href="<?=$this->basePath();?>/admin/auth/index"><?php echo $this->translate('Entrar') ?></a>
+                        <a  href="<?=$this->basePath();?>/admin/auth/index"><?php echo $this->translate('Entrar') ?></a>
                 <?php endif;?>
-                </li>
-            </ul>
+                </div>
+            </div>
 
             <hr>
             <footer>

@@ -41,7 +41,7 @@ class AuthController extends ActionController {
         $auth = $service->authenticate(
                 array('username' => $data['username'], 'password' => $data['password'])
         );
-        return $this->redirect()->toUrl('/');
+        return $this->redirect()->toRoute('home');
     }
 
     /**
@@ -51,7 +51,7 @@ class AuthController extends ActionController {
     public function logoutAction() {
         $service = $this->getService('Admin\Service\Auth');
         $auth = $service->logout();
-        return $this->redirect()->toUrl('/');
+        return $this->redirect()->toRoute('home');
     }
 
 }
